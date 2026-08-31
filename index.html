@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATELIER — Full Preview (Locked) | Designed by Aditya Pratap</title>
+<meta name="description" content="Full feature preview of ATELIER Client Portal by Aditya Pratap - Locked sample. For editable version contact @67.aditya_">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFBF5;--card:#F8F1E8;--text:#1A1A18;--textSec:#6B6E5D;--accent:#8A9A8B;--border:#C9BFAE;--font-serif:'Instrument Serif', Georgia, serif;--font-sans:'Inter', system-ui, sans-serif;--radius:16px;--shadow:0 4px 24px rgba(0,0,0,0.04);--shadow-lg:0 8px 32px rgba(0,0,0,0.08)}
+[data-theme="PLUM"]{--bg:#FBF7FF;--card:#FFFFFF;--text:#2B2332;--textSec:#7A6C8A;--accent:#8B6AA8;--border:#E9DDF5}
+[data-theme="NORTH"]{--bg:#F6F8FA;--card:#FFFFFF;--text:#0E1A24;--textSec:#5C6F7E;--accent:#5A7D9A;--border:#D6E2EB}
+[data-theme="TERRA"]{--bg:#FFF8F0;--card:#FFFFFF;--text:#2C1E13;--textSec:#8A7060;--accent:#C27A4E;--border:#E8D5C4}
+[data-theme="NOIR"]{--bg:#121212;--card:#1E1E1E;--text:#F5F2EE;--textSec:#9A9690;--accent:#E8DCC8;--border:#2A2A2A}
+[data-theme="SAND"]{--bg:#FDF6E9;--card:#FFFFFF;--text:#2D2922;--textSec:#8C867D;--accent:#D4B483;--border:#EADDC2}
+[data-theme="BLUSH"]{--bg:#FFF6F6;--card:#FFFFFF;--text:#2A1E1F;--textSec:#8C7476;--accent:#D68C8C;--border:#F0D6D6}
+[data-theme="FOREST"]{--bg:#F5F7F4;--card:#FFFFFF;--text:#1A241B;--textSec:#6B7D6E;--accent:#6B8A6B;--border:#D0DBD0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased;user-select:none;-webkit-user-select:none;overflow-x:hidden}
+.editorial{font-family:var(--font-serif);letter-spacing:-0.02em;line-height:0.92}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow);position:relative;transition:all .2s}
+.card:hover{box-shadow:var(--shadow-lg)}
+.badge{height:22px;padding:0 8px;border-radius:999px;border:1px solid var(--border);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.7;display:inline-flex;align-items:center;background:var(--bg)}
+.btn{height:36px;padding:0 14px;border-radius:10px;font-weight:500;font-size:12.5px;display:inline-flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--text);transition:all .2s}
+.btn-primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.progress{height:4px;background:var(--border);border-radius:999px;overflow:hidden}.progress>div{height:100%;background:var(--accent)}
+.locked-banner{position:sticky;top:0;z-index:200;background:#1A1A18;color:#FFFBF5;padding:10px 16px;text-align:center;font-size:11.5px;letter-spacing:0.04em;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+.locked-banner a{color:#E8DCC8;text-decoration:underline;font-weight:600}
+.header{position:sticky;top:36px;z-index:50;background:var(--bg);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(12px)}
+.nav{position:sticky;top:88px;height:calc(100vh - 88px);overflow-y:auto;border-right:1px solid var(--border);background:var(--bg);padding:16px;width:260px;flex-shrink:0}
+.nav-group{font-size:10px;letter-spacing:0.14em;opacity:0.5;margin:20px 0 6px;font-weight:600}
+.nav-item{width:100%;text-align:left;padding:8px 10px;border-radius:8px;border:1px solid transparent;background:transparent;color:var(--text);font-size:12.5px;display:flex;align-items:center;gap:8px;cursor:pointer}
+.nav-item.active{background:var(--text);color:var(--bg)}
+.top-studio-nav{position:sticky;top:88px;z-index:20;background:var(--bg);border-bottom:1px solid var(--border);padding:0 12px;height:44px;display:flex;align-items:center;gap:6px;overflow-x:auto}
+.top-studio-nav button{white-space:nowrap;height:30px;padding:0 12px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:11px;cursor:pointer}
+.top-studio-nav button.active{background:var(--text);color:var(--bg)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.watermark{position:fixed;bottom:18px;right:18px;z-index:999;background:#1A1A18;color:#FFFBF5;padding:8px 14px;border-radius:999px;font-size:11px;letter-spacing:0.08em;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.theme-dot{width:18px;height:18px;border-radius:999px;border:1px solid var(--border);cursor:pointer;display:inline-block}
+@media(max-width:900px){.nav{display:none}.top-studio-nav{top:86px}main{padding:16px 12px 80px!important}}
+</style>
+<script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  if((e.ctrlKey||e.metaKey)&&['c','s','u','p','a'].includes(e.key.toLowerCase())) e.preventDefault();
+  if(e.key==='F12') e.preventDefault();
+  if(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key.toUpperCase())) e.preventDefault();
+});
+document.addEventListener('dragstart', e=>e.preventDefault());
+function setTheme(t){document.body.setAttribute('data-theme',t);document.querySelectorAll('.theme-dot').forEach(d=>d.style.outline=d.dataset.theme===t?'2px solid var(--text)':'none')}
+function setLayout(l){document.body.className='layout-'+l;document.querySelectorAll('[data-layout]').forEach(b=>b.classList.toggle('active',b.dataset.layout===l))}
+</script>
+</head>
+<body data-theme="ATELIER" class="layout-Classic">
+
+<div class="locked-banner">
+  🔒 FULL PREVIEW — LOCKED • Designed by <strong>Aditya Pratap</strong> • All features visible, editing disabled • Get editable: <a href="https://instagram.com/67.aditya_" target="_blank">@67.aditya_</a>
+</div>
+
+<div class="header">
+  <div style="display:flex;gap:12px;align-items:center">
+    <div style="width:38px;height:38px;background:var(--text);color:var(--bg);display:grid;place-items:center;border-radius:10px;font-family:var(--font-serif);font-size:18px">A</div>
+    <div>
+      <div style="font-family:var(--font-serif);font-size:18px;line-height:1">ATELIER — Studio Meridian</div>
+      <div style="font-size:10px;letter-spacing:0.14em;opacity:0.6">CLIENT PORTAL • BY ADITYA PRATAP • LOCKED SAMPLE</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <span class="badge">Sample • 🔒 Locked</span>
+    <a href="https://instagram.com/67.aditya_" target="_blank" class="btn btn-primary" style="text-decoration:none">Get Editable</a>
+  </div>
+</div>
+
+<div class="top-studio-nav">
+  <span style="font-size:10px;letter-spacing:0.12em;opacity:0.5;margin-right:6px">THEME:</span>
+  <button class="theme-dot" data-theme="ATELIER" style="background:#FFFBF5" onclick="setTheme('ATELIER')" title="ATELIER"></button>
+  <button class="theme-dot" data-theme="PLUM" style="background:#E9DDF5" onclick="setTheme('PLUM')" title="PLUM"></button>
+  <button class="theme-dot" data-theme="NORTH" style="background:#D6E2EB" onclick="setTheme('NORTH')" title="NORTH"></button>
+  <button class="theme-dot" data-theme="TERRA" style="background:#E8D5C4" onclick="setTheme('TERRA')" title="TERRA"></button>
+  <button class="theme-dot" data-theme="NOIR" style="background:#2A2A2A" onclick="setTheme('NOIR')" title="NOIR"></button>
+  <button class="theme-dot" data-theme="SAND" style="background:#EADDC2" onclick="setTheme('SAND')" title="SAND"></button>
+  <button class="theme-dot" data-theme="BLUSH" style="background:#F0D6D6" onclick="setTheme('BLUSH')" title="BLUSH"></button>
+  <button class="theme-dot" data-theme="FOREST" style="background:#D0DBD0" onclick="setTheme('FOREST')" title="FOREST"></button>
+  <span style="width:1px;height:20px;background:var(--border);margin:0 8px"></span>
+  <span style="font-size:10px;letter-spacing:0.12em;opacity:0.5">LAYOUT:</span>
+  <button data-layout="Classic" class="active" onclick="setLayout('Classic')">Classic</button>
+  <button data-layout="Editorial" onclick="setLayout('Editorial')">Editorial</button>
+  <button data-layout="Minimal" onclick="setLayout('Minimal')">Minimal</button>
+  <button data-layout="Split" onclick="setLayout('Split')">Split</button>
+  <button data-layout="Studio" onclick="setLayout('Studio')">Studio</button>
+</div>
+
+<div style="display:flex;max-width:1440px;margin:0 auto">
+  <aside class="nav">
+    <div class="nav-group">PROJECT</div>
+    <div class="nav-item active">— Overview & Goals</div>
+    <div class="nav-item">— Deliverables</div>
+    <div class="nav-item">— Timeline</div>
+    <div class="nav-item">— Feedback Studio</div>
+    <div class="nav-item">— Payments</div>
+    <div class="nav-item">— Resources</div>
+    <div class="nav-item">— Wrap-up</div>
+    <div class="nav-item">— Thank You</div>
+    <div class="nav-group">TOOLKIT</div>
+    <div class="nav-item">— Business Policies</div>
+    <div class="nav-item">— Email Library</div>
+    <div style="margin-top:24px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:12px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.1em">✦ FULL VERSION INCLUDES</div>
+      <div style="font-size:11.5px;opacity:0.7;margin:8px 0;line-height:1.5">
+        ✓ Edit everything<br>✓ Export client HTML<br>✓ Save & resume<br>✓ Add your logo<br>✓ Unlimited clients
+      </div>
+      <a href="https://instagram.com/67.aditya_" target="_blank" style="display:flex;height:36px;align-items:center;justify-content:center;border-radius:999px;background:var(--text);color:var(--bg);text-decoration:none;font-size:12px;font-weight:600">DM @67.aditya_</a>
+    </div>
+    <div style="margin-top:16px;font-size:10px;opacity:0.4;letter-spacing:0.08em;text-align:center">DESIGNED BY ADITYA PRATAP<br>© 2026 • LOCKED SAMPLE</div>
+  </aside>
+
+  <main style="flex:1;padding:24px;max-width:1120px">
+
+    <section style="margin-bottom:36px">
+      <span class="badge">Designed by Aditya Pratap • Full Preview • Locked</span>
+      <h1 class="editorial" style="font-size:58px;margin:14px 0 10px;line-height:0.92">A portal that makes<br><em style="font-weight:400">clients feel premium.</em></h1>
+      <p style="opacity:0.7;max-width:600px">This GitHub version shows <strong>every section</strong> of ATELIER — timeline, payments, feedback, resources — but editing is disabled. In the editable version, you can click any text to change it.</p>
+      <div class="grid2" style="margin-top:20px">
+        <div class="card"><div style="font-size:10px;letter-spacing:0.12em;opacity:0.5">CLIENT</div><div style="font-weight:600;margin-top:4px">North Studio — Brand Identity</div><div style="font-size:12px;opacity:0.6">Project by Studio Meridian • 65% Complete</div><div style="margin-top:10px" class="progress"><div style="width:65%"></div></div></div>
+        <div class="card"><div style="font-size:10px;letter-spacing:0.12em;opacity:0.5">WHAT'S LOCKED?</div><div style="font-size:12.5px;margin-top:4px;line-height:1.5">🔒 Text editing disabled<br>🔒 Image upload disabled<br>🔒 Export disabled<br><span style="opacity:0.6">Everything is visible — just not editable</span></div></div>
+      </div>
+    </section>
+
+    <section id="overview" style="margin-bottom:32px">
+      <div class="card">
+        <h2 style="font-family:var(--font-serif);font-size:28px;margin:0 0 8px">Project Overview</h2>
+        <p style="opacity:0.7">Craft a modern brand identity for North Studio — a minimal architecture practice. Scope includes logo, typography, palette, website, and brand guidelines. Goal: feel editorial, timeless, and premium.</p>
+        <div class="grid2" style="margin-top:16px">
+          <div style="border:1px solid var(--border);border-radius:10px;padding:12px"><div style="font-size:10px;opacity:0.5;letter-spacing:0.12em">GOALS</div><div style="font-size:13px;margin-top:4px">• Elevate perception<br>• Consistent system<br>• Client-ready handoff</div></div>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:12px"><div style="font-size:10px;opacity:0.5;letter-spacing:0.12em">SCOPE</div><div style="font-size:13px;margin-top:4px">Brand • Web • Guidelines<br>Timeline: 4 weeks • Revisions: 2</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deliverables" style="margin-bottom:32px">
+      <div class="card">
+        <h3>Deliverables — 6 files</h3>
+        <div class="grid2" style="margin-top:12px">
+          <div style="border:1px solid var(--border);border-radius:10px;padding:12px">📁 Logo Pack — Approved • AI, SVG, PNG</div>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:12px">📁 Color & Type System — In Review</div>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:12px">📁 Website — Draft v2</div>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:12px">📁 Brand Guidelines — Pending</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" style="margin-bottom:32px">
+      <div class="card">
+        <h3>Timeline</h3>
+        <div style="margin-top:12px">
+          <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600;min-width:90px">Mar 03</span><span>Kickoff & Discovery — Done</span><span class="badge" style="margin-left:auto">Done</span></div>
+          <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600;min-width:90px">Mar 10</span><span>Concept Presentation — Done</span><span class="badge" style="margin-left:auto">Done</span></div>
+          <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600;min-width:90px">Mar 18</span><span>Website Development — In Progress</span><span class="badge" style="margin-left:auto">Active</span></div>
+          <div style="display:flex;gap:12px;padding:10px 0"><span style="font-weight:600;min-width:90px">Mar 28</span><span>Final Handoff & Training — Upcoming</span><span class="badge" style="margin-left:auto">Upcoming</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback" style="margin-bottom:32px">
+      <div class="card">
+        <h3>Feedback Studio</h3>
+        <div style="margin-top:12px;border:1px solid var(--border);border-radius:10px;padding:12px">
+          <strong>Round 01 — Initial Concepts • Approved</strong>
+          <div class="grid2" style="margin-top:10px">
+            <div style="border:1px solid var(--border);border-radius:8px;padding:10px"><div style="font-weight:600">Concept A — Editorial</div><div style="font-size:11px;opacity:0.6">Serif + quiet luxury • Approved</div></div>
+            <div style="border:1px solid var(--border);border-radius:8px;padding:10px"><div style="font-weight:600">Concept B — Modernist</div><div style="font-size:11px;opacity:0.6">Grid + bold • Archived</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="payments" style="margin-bottom:32px">
+      <div class="card">
+        <h3>Payments — $4,500 • Paid $3,000 • Remaining $1,500</h3>
+        <div style="font-size:11px;opacity:0.5;margin-bottom:8px">Template-only — no real processing (editable version lets you change currency & amounts)</div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)"><span>Mar 01 - Deposit — Brand Strategy</span><span>Paid $1,500</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)"><span>Mar 12 - Midpoint — Identity + Website</span><span>Paid $1,500</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0"><span>Mar 28 - Final — Guidelines & Handoff</span><span>Due $1,500</span></div>
+      </div>
+    </section>
+
+    <section id="resources" style="margin-bottom:32px">
+      <div class="card">
+        <h3>Resources</h3>
+        <div style="padding:8px 0;border-bottom:1px solid var(--border)"><strong>Brand Assets Drive</strong> — All final files → <span style="opacity:0.6">drive.google.com/sample</span></div>
+        <div style="padding:8px 0;border-bottom:1px solid var(--border)"><strong>Website Staging</strong> — Live preview → <span style="opacity:0.6">northstudio.framer.website</span></div>
+        <div style="padding:8px 0"><strong>Font Licenses</strong> — Instrument Serif + Inter → <span style="opacity:0.6">Included</span></div>
+      </div>
+    </section>
+
+    <section id="wrapup" style="margin-bottom:32px">
+      <div class="card">
+        <h3>Handoff Package</h3>
+        <p style="opacity:0.7;font-size:13px">Final delivery includes logo pack, brand guidelines PDF, website source, and launch checklist.</p>
+        <div style="margin-top:12px"><strong>What you get:</strong><div style="font-size:13px;opacity:0.7;margin-top:4px">• Master logo files<br>• Typography & color docs<br>• Website access & training<br>• 14 days post-launch support</div></div>
+      </div>
+    </section>
+
+    <section id="toolkit" style="margin-bottom:32px">
+      <div class="card">
+        <h3>Business Toolkit</h3>
+        <div style="font-size:11px;opacity:0.5;margin-bottom:12px">Editable policies & email templates in full version</div>
+        <div style="margin-top:12px"><strong>Revisions Policy</strong><div style="opacity:0.7;font-size:13px">2 revision rounds included. Additional rounds at $150/hr.</div></div>
+        <div style="margin-top:12px"><strong>Payment Terms</strong><div style="opacity:0.7;font-size:13px">50% upfront, 25% midpoint, 25% final. Net 7 days.</div></div>
+        <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px"><strong>Email — Project Kickoff</strong><div style="white-space:pre-wrap;opacity:0.7;font-size:13px;margin-top:6px;border:1px solid var(--border);border-radius:8px;padding:10px;background:var(--bg)">Hi [Client],
+
+Excited to kick off [Project]! Here's your private portal: [link]
+
+You'll find timeline, deliverables & feedback all in one place.
+
+Best,
+[Your Studio]</div></div>
+      </div>
+    </section>
+
+    <div class="card" style="text-align:center;padding:32px;background:var(--text);color:var(--bg);border-color:var(--text)">
+      <div style="font-family:var(--font-serif);font-size:32px">This is the full preview.</div>
+      <p style="opacity:0.7;font-size:13px;max-width:520px;margin:10px auto 18px">Everything you see — themes, layouts, timeline, payments, feedback — is included in the editable version. Here it's locked to protect the design. Get the unlocked builder to edit & export for your own clients.</p>
+      <a href="https://instagram.com/67.aditya_" target="_blank" style="display:inline-flex;height:42px;padding:0 22px;border-radius:999px;background:var(--bg);color:var(--text);text-decoration:none;font-weight:700;font-size:13px;align-items:center;gap:8px">✦ Get Editable Version — DM @67.aditya_</a>
+      <div style="font-size:11px;opacity:0.5;margin-top:14px;letter-spacing:0.08em">DESIGNED & DEVELOPED BY ADITYA PRATAP • INDIA • 2026</div>
+    </div>
+
+  </main>
+</div>
+
+<div class="watermark">© Aditya Pratap • FULL PREVIEW • @67.aditya_ • 🔒 Locked</div>
+
+</body>
+</html>

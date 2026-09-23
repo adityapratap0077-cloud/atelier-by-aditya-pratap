@@ -218,7 +218,7 @@ I'll send you the full source + license.
 5. Like it? Get editable version → Instagram
 
 ```bash
-git clone https://github.com/yourusername/atelier.git
+git clone https://github.com/adityapratap0077-cloud/atelier-by-aditya-pratap.git
 open index.html
 ```
 
